@@ -1,0 +1,223 @@
+
+/*
+========================================================
+              ESTILOS DE LA ACTIVIDAD 5.2
+========================================================
+Asignatura: Diseño de Interfaces (DEIN)
+Actividad: Generación de informes estáticos y dinámicos
+
+Este archivo contiene los estilos facilitados para
+la actividad. El alumnado debe desarrollar la
+funcionalidad mediante JavaScript.
+========================================================
+*/
+
+
+/* =====================================================
+   1. RESET
+   Eliminamos algunos estilos predeterminados del
+   navegador para controlar mejor la presentación.
+   ===================================================== */
+
+/* El tamaño de los elementos incluye el contenido,
+   el padding y los bordes. */
+* {
+    box-sizing: border-box;
+}
+
+/* Eliminamos el margen predeterminado del documento. */
+body {
+    margin: 0;
+}
+
+
+/* =====================================================
+   2. BASE
+   Definimos los estilos generales del documento.
+   ===================================================== */
+
+/* :root representa el elemento raíz del documento.
+   Establecemos la tipografía y los colores generales. */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #243447;
+    background: #f4f7fa;
+}
+
+
+/* =====================================================
+   3. LAYOUT
+   Definimos la distribución de las zonas principales.
+   ===================================================== */
+
+/* CABECERA: título y descripción de la actividad. */
+header {
+    background: #245a81;
+    color: white;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+/* Título principal de la cabecera. */
+header h1 {
+    margin: 0 0 8px;
+}
+
+/* Párrafo de la cabecera. */
+header p {
+    margin: 0;
+}
+
+/* NAVEGACIÓN: menú con los dos tipos de informe. */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #d9e1e8;
+    flex-wrap: wrap;
+}
+
+/* CONTENIDO PRINCIPAL:
+   Limitamos la anchura y centramos el contenido. */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+/* PIE DE PÁGINA. */
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #64748b;
+}
+
+
+/* =====================================================
+   4. COMPONENTES
+   Estilos de los elementos que forman la interfaz.
+   ===================================================== */
+
+/* SECCIONES:
+   Cada apartado se presenta como una caja blanca. */
+section {
+    background: white;
+    border: 1px solid #d9e1e8;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* OCULTACIÓN:
+   Los elementos con el atributo hidden no se muestran.
+   JavaScript podrá modificar este atributo para
+   mostrar u ocultar las diferentes secciones. */
+[hidden] {
+    display: none !important;
+}
+
+/* BOTONES:
+   Apariencia común para todos los botones. */
+button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #245a81;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Cambiamos el color cuando el ratón pasa por encima
+   o cuando el botón recibe el foco mediante teclado. */
+button:hover,
+button:focus-visible {
+    background: #163c59;
+}
+
+/* FORMULARIO:
+   Distribuimos los campos verticalmente mediante grid. */
+form {
+    display: grid;
+    gap: 10px;
+    max-width: 420px;
+}
+
+/* CAMPOS DE ENTRADA:
+   Aplicamos espacios, bordes y tipografía. */
+input {
+    padding: 10px;
+    border: 1px solid #aebdc9;
+    border-radius: 5px;
+    font: inherit;
+}
+
+/* Separamos el botón de los campos del formulario. */
+form button {
+    margin-top: 12px;
+}
+
+/* TABLAS:
+   Se utilizarán para mostrar las asignaturas,
+   las calificaciones y los resultados. */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+/* Estilos comunes para las celdas. */
+th,
+td {
+    border: 1px solid #cbd5df;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Diferenciamos visualmente las cabeceras de la tabla. */
+th {
+    background: #e8f0f6;
+}
+
+
+/* =====================================================
+   5. IMPRESIÓN
+   Estilos específicos para imprimir el informe
+   o guardarlo como documento PDF.
+   ===================================================== */
+
+@media print {
+
+    /* Configuramos el papel en tamaño A4
+       y establecemos márgenes de 20 mm. */
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+
+    /* Utilizamos fondo blanco y texto negro
+       para facilitar la impresión. */
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+    /* Aprovechamos el espacio disponible en el papel. */
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Mostramos únicamente el informe generado,
+       eliminando sus bordes y espacios interiores. */
+    #informe {
+        display: block !important;
+        border: none;
+        padding: 0;
+    }
+
+}

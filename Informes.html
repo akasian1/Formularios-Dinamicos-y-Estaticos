@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+====================================================================================
+              DATOS DE LA ACTIVIDAD
+====================================================================================
+Nombre y apellidos del alumno:
+Fecha:
+Asignatura:   Diseño de Interfaces (DEIN)
+Actividad:    5.2 - Generación de informes estáticos y dinámicos
+Finalidad de la actividad:
+
+===================================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis informes académicos</title>
+  <link rel="stylesheet" href="estilosInformes.css">
+  <script src="informes.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Previsión de notas para 2º de DAM el alumno: PON AQUI TU NOMBRE y APELLIDOS</h1>
+    <p>Actividad 5.2 de DEIN: Generación de informes estáticos y dinámicos</p>
+  </header>
+
+  <nav aria-label="Tipos de informe">
+    <button type="button" id="btn-estatico">Informe estático</button>
+    <button type="button" id="btn-dinamico">Informe dinámico</button>
+  </nav>
+
+  <main>
+    <section id="seccion-estatico" hidden>
+      <h2>Informe estático</h2>
+      <p>Genera un informe a partir de los datos definidos en JavaScript.</p>
+      <button type="button" id="generar-estatico">Generar informe estático</button>
+    </section>
+
+    <section id="seccion-dinamico" hidden>
+      <h2>Informe dinámico</h2>
+      <p>Introduce los datos y genera un informe con la media calculada.</p>
+      <form id="formulario-notas">
+        <label for="nombre">Nombre del alumno:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <!-- ALUMNADO: añadid aquí un campo numérico para cada asignatura del ciclo. -->
+        <button type="submit">Generar informe dinámico</button>
+      </form>
+    </section>
+
+    <section id="informe" aria-live="polite" hidden>
+      <h2>Informe de calificaciones</h2>
+      <div id="contenido-informe"></div>
+      <button type="button" id="imprimir" onclick="window.print()">Imprimir / guardar PDF</button>
+    </section>
+  </main>
+
+  <footer><p>Actividad: generación de informes · Diseño de Interfaces</p></footer>
+</body>
+</html>
